@@ -1,0 +1,8 @@
+- parse program options
+  - --daemon, --verbose, --notifier NOTIFIER and --help
+- add tmux and terminal-notifier to notifier gem
+- use tweetstream gem to use Twitter streaming API
+- .tweckel.rb, a dotfile for setting.
+  - use mini DSL
+  - an editor would be opened at first use of this gem (--config option should be there?)
+  - load dotfile dynamically and loading should be reloadabl
