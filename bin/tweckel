@@ -5,8 +5,8 @@ require 'optparse'
 
 opts = {}
 
-opt.on('-d'){|v| opts[:d] = v} #daemon
-opt.on('-v'){|v| opts[:v] = v} #verbose
-opt.on('-c'){|v| opts[:c] = v} #config
+opt.on('-d', '--daemon'){|v| opts[:daemon] = v} #daemon
+opt.on('-v', '--verbose'){|v| opts[:verbose] = v} #verbose
+opt.on('-c', '--config'){|v| opts[:config] = v} #config
 
-
+Tweckel::run(opts)

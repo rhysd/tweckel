@@ -1,5 +1,7 @@
 require "tweckel/version"
 
-module Tweckel
-  # Your code goes here...
+module Tweckel extend self
+  def run(opts)
+    
+  end
 end
