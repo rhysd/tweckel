@@ -1,8 +1,8 @@
+require 'tweckel/core_ext/file'
 require 'terminal-notifier'
 
 module Notifier
-  module OsxNotification
-    extend self
+  module OsxNotification extend self
 
     def supported?
       return false unless Notifier.os?(/darwin/)
@@ -22,5 +22,19 @@ module Notifier
         :group    => Process.pid
       )
     end
+  end
+end
+
+module Notifier
+  module Tmux extend self
+
+    def supported?
+      File.which?('tmux') && ! `tmux ls 2>/dev/null`.empty?
+    end
+
+    def notify(options)
+      `tmux display-message '[#{options[:title]}] #{options[:message]}'`
+    end
+
   end
 end
